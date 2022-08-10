@@ -22,6 +22,8 @@
     name="laser_scan_matcher_node" output="screen">
     <remap from="scan" to="scan"/>
     <remap from="vel" to="$(arg cmd_vel)" />
+    <remap from="odom" to="laser_odom" />
+    <remap from="pose_stamped" to="lidar_posestamped" />
 
     <!-- Coordinate frames -->
     <param name="fixed_frame" value="$(arg fixed_frame)" />
@@ -45,7 +47,7 @@
     <param name="publish_tf" value="false"/>
     <param name="publish_odom" value="false"/>
     <param name="publish_pose" value="true"/>
-    <param name="publish_pose_stamped" value="false"/>
+    <param name="publish_pose_stamped" value="true"/>
 
     <!-- Scan matching -->
     <param name="max_iterations" value="50"/>
